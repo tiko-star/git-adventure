@@ -1,4 +1,7 @@
 {
     "name": "git-adventure",
-    "version": "1.0"
+    "version": "1.0",
+    "dependencies": {
+        "express": "^4.16.4"
+    }
 }
