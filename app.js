@@ -37,3 +37,11 @@ app.get('/foo', (req, res) => {
 const server = app.listen(8888, () => {
     console.log('app is listening on port 8888 ...');
 });
+
+process.on('SIGINT', () => {
+    console.info('closing server connection ...');
+
+    server.close(() => {
+        console.log('server connection closed ...');
+    });
+});
