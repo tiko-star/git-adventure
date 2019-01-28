@@ -30,6 +30,10 @@ app.get('/contacts', (req, res) => {
     res.send('Our contacts');
 });
 
+app.get('/foo', (req, res) => {
+    res.send('foooo...');
+});
+
 const server = app.listen(8888, () => {
     console.log('app is listening on port 8888 ...');
 });
