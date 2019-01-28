@@ -17,6 +17,10 @@ app.get('/about-us', (req, res) => {
     res.send('We are developers!!!');
 });
 
+app.get('/contacts', (req, res) => {
+    res.send('Our contacts');
+});
+
 const server = app.listen(8888, () => {
     console.log('app is listening on port 8888 ...');
 });
