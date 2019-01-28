@@ -2,6 +2,8 @@
 
 const express = require('express');
 const bodyparser = require('body-parser');
+const compression = require('compression');
+
 const app = express();
 
 // parse application/x-www-form-urlencoded
@@ -9,6 +11,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
 app.use(bodyParser.json());
+
+// compress all responses
+app.use(compression());
 
 app.get('/hello/{name}', (req, res) => {
     res.send(`Hello ${req.params.name}`);
