@@ -3,17 +3,20 @@
 const express = require('express');
 const bodyparser = require('body-parser');
 const compression = require('compression');
+const helmet = require('helmet')
 
 const app = express();
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyparser.urlencoded({ extended: false }));
 
 // parse application/json
-app.use(bodyParser.json());
+app.use(bodyparser.json());
 
 // compress all responses
 app.use(compression());
+
+app.use(helmet());
 
 app.get('/hello/{name}', (req, res) => {
     res.send(`Hello ${req.params.name}`);
