@@ -18,7 +18,7 @@ app.use(compression());
 
 app.use(helmet());
 
-app.get('/hello/{name}', (req, res) => {
+app.get('/hello/:name', (req, res) => {
     res.send(`Hello ${req.params.name}`);
 });
 
